@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "grpc-go-calculator/calculator/proto";
+
+package calculator;
+
+// The Calculator service service definition
+service CalculatorService {
+  rpc Add (AddRequest) returns (AddResponse);
+  rpc AddSeries (stream AddSeriesRequest) returns (stream AddResponse);
+}
+
+// Request message containing two numbers
+message AddRequest {
+  double num1 = 1;
+  double num2 = 2;
+}
+
+// Response message containing the sum
+message AddResponse {
+  double sum = 1;
+}
+
+message AddSeriesRequest {
+  double num1 = 1;
+}
+
