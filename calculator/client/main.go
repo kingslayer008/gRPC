@@ -35,6 +35,7 @@ func main() {
 
 	c := pb.NewCalculatorServiceClient(conn)
 
-	doAddSeries(c)
+	//doAddSeries(c)
+	doAvg(c)
 
 }
